@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row text-center">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Название</th>
+                <th scope="col">Описание</th>
+                <th scope="col">Срок выполнения</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Ссылка</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for object in object_list %}
+            <tr>
+                <th scope="row">{{ object.title }}</th>
+                <td>{{ object.description }}</td>
+                <td>{{ object.duration }}</td>
+                <td>{{ object.price }}</td>
+                <td><a href="{% url 'main:analysis_detail' object.pk %}"
+                       class="btn btn-lg btn-block btn-outline-primary">Открыть</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

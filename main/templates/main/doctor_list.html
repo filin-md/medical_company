@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row text-center">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Фото</th>
+                <th scope="col">ФИО</th>
+                <th scope="col">Направление</th>
+                <th scope="col">Стаж работы</th>
+                <th scope="col">Стоимость консультации</th>
+                <th scope="col">Ссылка</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for object in object_list %}
+            <tr>
+                <td>
+                    {% if object.photo %}
+                    <img src="{{ object.photo.url }}" width="100">
+                    {% else %}
+                    <img src="/media/main/no-avatar.jpg" width="100">
+                    {% endif %}
+                </td>
+                <td>{{ object.full_name }}</td>
+                <td>{{ object.profile }}</td>
+                <td>{{ object.experience }}</td>
+                <td>{{ object.start_price }}</td>
+                <td><a href="{% url 'main:doctor_detail' object.pk %}"
+                       class="btn btn-lg btn-block btn-outline-primary">Открыть</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
