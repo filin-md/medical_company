@@ -1,5 +1,8 @@
 from django.db import models
 
+from users.models import User
+
+
 # Create your models here.
 
 
@@ -32,8 +35,7 @@ class Doctor(models.Model):
 class Order(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, verbose_name='Врач')
     consultation_date = models.DateTimeField(verbose_name='Дата записи')
-    client = models.CharField(max_length=150, verbose_name='ФИО клиента')
-    phone = models.CharField(max_length=15, verbose_name='Номер телефона')
+    client = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Клиент')
 
     class Meta:
         verbose_name = 'Заявка'
