@@ -16,4 +16,4 @@ class DoctorAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('doctor', 'consultation_date', 'client', 'phone',)
+    list_display = ('doctor', 'consultation_date', 'client',)

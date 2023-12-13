@@ -6,9 +6,6 @@ from django.views.generic import ListView, DetailView, CreateView
 from main.models import Analysis, Doctor, Order
 
 
-# Create your views here.
-
-
 class AnalysisListView(ListView):
     model = Analysis
 
@@ -27,7 +24,7 @@ class DoctorDetailView(DetailView):
 
 class OrderCreateView(CreateView):
     model = Order
-    fields = 'doctor', 'consultation_date', 'client', 'phone'
+    fields = 'doctor', 'consultation_date'
     success_url = reverse_lazy('main:analysis_list')
 
     def get_form(self, form_class=None):
