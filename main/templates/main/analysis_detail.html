@@ -11,9 +11,9 @@
                     <h2 class="my-0 font-weight-normal">{{ object.title }}</h2>
                 </div>
                 <div class="card-body">
-                    <p>Направление: {{ object.description }}</p>
-                    <p>Стаж работы: {{ object.duration }}</p>
-                    <p>Стоимость консультации: {{ object.price }}</p>
+                    <p>Описание: {{ object.description }}</p>
+                    <p>Длительность выполнения: {{ object.duration }}</p>
+                    <p>Стоимость: {{ object.price }}</p>
                     <a class="btn btn-primary" href="{% url 'main:order' %}">Запись к
                         врачу</a>
 
