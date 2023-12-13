@@ -6,9 +6,6 @@ from django.views.generic import ListView, DetailView, CreateView
 from main.models import Analysis, Doctor, Order
 
 
-# Create your views here.
-
-
 class AnalysisListView(ListView):
     model = Analysis
 
