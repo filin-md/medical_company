@@ -33,8 +33,5 @@ class OrderCreateView(CreateView):
         return form
 
 
-
 def contacts(request):
     return render(request, 'main/contacts.html')
-
-
